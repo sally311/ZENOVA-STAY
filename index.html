@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>ZENOVA STAY</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+      .flag-select {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .flag-select button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+        transition: transform 0.1s;
+      }
+      .flag-select button:active {
+        transform: scale(0.95);
+      }
+      .flag-select img {
+        width: 28px;
+        height: 20px;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      }
+      /* Affiche le widget Google Translate en haut à droite */
+      #google_translate_element {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        padding: 4px 8px;
+      }
+      .goog-logo-link, .goog-te-gadget span {
+        display: none !important;
+      }
+      .goog-te-gadget {
+        font-size: 0 !important;
+      }
+    </style>
+</head>
+<body>
+  <!-- Sélecteur de langue avec drapeaux -->
+  <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #ffffff;">
+    <h1 style="margin: 0; font-family: 'Segoe UI', sans-serif;">ZENOVA STAY</h1>
+    <div class="flag-select">
+      <button onclick="changeLanguage('fr')"><img src="https://flagcdn.com/fr.svg" alt="Français" title="Français"></button>
+      <button onclick="changeLanguage('en')"><img src="https://flagcdn.com/gb.svg" alt="English" title="English"></button>
+      <button onclick="changeLanguage('es')"><img src="https://flagcdn.com/es.svg" alt="Español" title="Español"></button>
+    </div>
+  </header>
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'fr,en,es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+    function changeLanguage(lang) {
+      var langMap = { fr: 'fr', en: 'en', es: 'es' };
+      var targetLang = langMap[lang] || 'fr';
+      var gtCombo = document.querySelector('select.goog-te-combo');
+      if (gtCombo) {
+        gtCombo.value = targetLang;
+        gtCombo.dispatchEvent(new Event('change'));
+      } else {
+        var interval = setInterval(function() {
+          var select = document.querySelector('select.goog-te-combo');
+          if (select) {
+            select.value = targetLang;
+            select.dispatchEvent(new Event('change'));
+            clearInterval(interval);
+          }
+        }, 100);
+      }
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <header>
+        <h1>Bienvenue à ZENOVA STAY</h1>
+    </header>
+    <div id="centre">
+        <aside>
+            <nav>
+                <h3>Menu</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#partenaires">Partenaires</a></li>
+                    <li><a href="#À propos">À propos</a></li>
+                    
+                </ul>
+                </nav>
+                </aside>
+
+                <main>
+                    <section id="accueil" style="text-align:center; padding: 30px 10px; background: #f9f9f9;">
+                        <img id="accueil-banner" src="./Zenova Saty.png" alt="Sénégal Tour banner" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+                        <h2 style="color: #2c3e50; font-size: 2em; margin-bottom: 10px;">Séjour</h2>
+                        <p style="font-size: 1.1em; color: #444; margin-bottom: 8px;">
+                            Bienvenue sur notre site dédié aux merveilles du voyage.<br>
+                            Explorez les paysages, la culture et l'hospitalité du monde.
+                        </p>
+                        <p style="font-size: 1.1em; color: #444; margin-bottom: 20px;">
+                            Avec Zenova Stay vivez des expériences uniques et authentiques.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; align-items: flex-start;">
+                            <div>
+                                <div class="eg-widget" data-widget="search" data-program="fr-expedia" data-lobs="stays,flights" data-network="pz" data-camref="1100l4csM3"></div>
+                            </div>
+                            <div>
+                                <div class="eg-affiliate-banners" data-program="fr-expedia" data-network="pz" data-layout="medium-rectangle" data-image="sailing" data-message="bye-bye-bucket-list-hello-adventure" data-link="home" data-camref="1100l4csM3" data-pubref=""></div>
+                            </div>
+                        </div>
+                        <script class="eg-widgets-script" src="https://affiliates.expediagroup.com/products/widgets/assets/eg-widgets.js"></script>
+                        <script class="eg-affiliate-banners-script" src="https://affiliates.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"></script>
+                    </section>
+
+                        <span></span>
+                    </section>
+                    <section id="services">    
+                        <h2>Services</h2>
+                        <div class="service">
+                            <img src="./hotel logo 28. svg.png" alt="Hôtels" width="100" height="100">
+                            <h3>Réservation hôtels</h3>  
+                            <p>Organisez votre voyage en toute simplicité grâce à notre service 
+                                de réservation  d'hôtels adaptés à vos besoins.</p>
+                        </div>     
+                        <div class="eg-widget" data-widget="search" data-program="fr-expedia" data-lobs="stays,flights" data-network="pz" data-camref="1100l4csM3"></div>
+<script class="eg-widgets-script" src="https://affiliates.expediagroup.com/products/widgets/assets/eg-widgets.js"></script>
+
+                        
+
+                        <div class="service">
+                            <img src="./vol.png" alt="Réservation de Vols" width="100" height="100" style="display:block; margin: 0 auto 10px;">
+                            <h3 style="text-align:center; margin-bottom: 8px;">Réservation de vols</h3>  
+                            <p style="text-align:center; margin-bottom: 15px;">
+                                Envolez-vous vers le monde avec simplicité,
+                                confort et authenticité – votre aventure commence ici.
+                            </p>
+                            <div style="display: flex; justify-content: center;">
+                                <div class="eg-widget" data-widget="search" data-program="fr-expedia" data-lobs="flights" data-network="pz" data-camref="1100l4csM3"></div>
+                            </div>
+                        </div>
+
+                        <div class="service" style="text-align: center; margin-bottom: 30px;">
+                            <img src="./activites.png" alt="Activités et loisirs" width="100" height="100" style="display: block; margin: 0 auto 10px;">
+                            <h3 style="margin-bottom: 10px;">Activités et loisirs</h3>  
+                            <p style="margin-bottom: 18px;">
+                                Aventure ou détente ? Explorez, 
+                                naviguez, vibrez — vos plus beaux souvenirs commencent ici.
+                            </p>
+                            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                                <div>
+                                    <div class="eg-affiliate-banners" data-program="fr-expedia" data-network="pz" data-layout="medium-rectangle" data-image="nature" data-message="make-exciting-activities-attractions" data-link="cruises" data-camref="1100l4csM3" data-pubref=""></div>
+                                </div>
+                                <div>
+                                    <div class="eg-affiliate-banners" data-program="fr-expedia" data-network="pz" data-layout="medium-rectangle" data-image="beach" data-message="make-exciting-activities-attractions" data-link="activities" data-camref="1100l4csM3" data-pubref=""></div>
+                                </div>
+                            </div>
+                            <script class="eg-affiliate-banners-script" src="https://affiliates.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"></script>
+                        </div>
+                        <span></span>
+                    </section>
+                
+                    <section id="contact">
+                        <h2>Contact</h2>
+                        <p>Pour toute demande d'information ou de réservation, n'hésitez pas à nous contacter :</p>
+                        <form action="mailto:sallyniang191096@gmail.com" method="post" enctype="text/plain">
+                            <label for="name">Nom :</label>
+                            <input type="text" id="name" name="name" required>
+                            <br>
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email" required>
+                            <br>
+                            <label for="message">Message :</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                            <br>
+                            <button type="submit">Envoyer</button>
+                        </form>
+                        <span></span>
+                    </section>
+                    <section id="partenaires" style="background-color: #f9f9f9; padding: 40px 0;">
+                        <div style="text-align: center; margin-bottom: 30px;">
+                            <h2 style="font-family: Arial, sans-serif; font-size: 2em; margin-bottom: 10px;">Nos partenaires</h2>
+                            <p style="color: #555; font-size: 1.1em;">
+                                Nous collaborons avec des leaders du voyage pour vous offrir les meilleures expériences.
+                            </p>
+                        </div>
+                        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; padding: 20px;">
+                            <a href="https://www.booking.com" target="_blank" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px 24px; display: flex; align-items: center; transition: box-shadow 0.2s;">
+                                <img src="./booking.jpg" alt="Booking.com" style="width:140px; height:auto; display:block;">
+                            </a>
+                            <a href="https://www.expedia.com" target="_blank" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px 24px; display: flex; align-items: center; transition: box-shadow 0.2s;">
+                                <img src="./expedia.png" alt="Expedia" style="width:140px; height:auto; display:block;">
+                            </a>
+                            <a href="https://www.hotelbeds.com" target="_blank" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px 24px; display: flex; align-items: center; transition: box-shadow 0.2s;">
+                                <img src="./hotelbed.webp" alt="Hotelbeds" style="width:150px; height:auto; display:block;">
+                            </a>
+                            <a href="https://www.airbnb.com" target="_blank" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px 24px; display: flex; align-items: center; transition: box-shadow 0.2s;">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_Bélo.svg" alt="Airbnb" style="width:110px; height:auto; display:block;">
+                            </a>
+                        </div>
+                    </section>
+</section>
+                        <span></span>
+                    </section>
+
+                    <section id="À propos">
+                        <h2>À propos de nous</h2>
+                        <p>Chez Zenova Stay, nous croyons que chaque voyage est une occasion de se 
+                            reconnecter à l’essentiel. Spécialisée dans les expériences de voyage 
+                            authentiques, notre agence vous accompagne à chaque étape : 
+                            de la réservation de votre vol, à l’hébergement, en passant par une sélection
+                             unique d’activités culturelles, de loisirs et de croisières..</p>
+                        <span></span>
+                    </section>
+                <foter> 
+                    <p>© de 2000 à 2025 Zenova Stay. 
+                        sally NIANG
+                        Tous droits réservés.</p>
+                </foter>
